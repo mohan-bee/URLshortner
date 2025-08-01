@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useRouter, useNavigate } from '@tanstack/react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQueryClient } from '@tanstack/react-query';
@@ -13,7 +13,7 @@ const Navbar = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const currentPath = router.state.location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  console.log(isAuthenticated)
+
   const handleLogout = async () => {
     try {
       // Call the logout API endpoint to clear the accessToken cookie
